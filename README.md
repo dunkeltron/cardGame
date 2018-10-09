@@ -1,1 +1,1 @@
-# cardGame
+# It's heavily inspired by slay the spire.
