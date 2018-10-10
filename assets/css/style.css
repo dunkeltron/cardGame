@@ -41,6 +41,11 @@
     bottom: 5%; 
     right:5%;
 }
+/* character formatting (includes player, enemies, allies*/
+.character-picture-zone{
+    width:200px;
+    height:200px;
+}
 #player-Picture-Zone{
     background-color:yellowgreen;
 }
@@ -54,10 +59,7 @@
     width:200px;
     height:300px;
 }
-.character-picture-zone{
-    width:200px;
-    height:200px;
-}
+
 .enemy-picture-zone{
     background-color: maroon;
 }
@@ -76,13 +78,6 @@
 .top-bar-member{
     float:left;
 }
-/*.invisible{
-    visibility:hidden;
-}
-.visible{
-    visibility: visible;
-}
-*/
 .top-bar-member{
     padding-left:20px;
 }
@@ -119,7 +114,14 @@
     padding:0px;
 }
 
-
+/* generic formatting classes*/
+/*.invisible{
+    visibility:hidden;
+}
+.visible{
+    visibility: visible;
+}
+*/
 .padding-0{
     padding:0px;
 }
