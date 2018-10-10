@@ -1,0 +1,125 @@
+/*combat-View formatting*/
+#combat-View{
+    position:fixed;
+    width:100%;
+    height:95%;
+    background-color:yellow;
+    top:5%;
+}
+#ally-Zone{
+    position:absolute;
+    top:30%;
+    left:10%;
+}
+#player{    
+    background-color:green;
+    width:200px;
+    height:300px;
+}
+#energy{
+    position:absolute;
+    top:85%;
+    left:5%;
+}
+#draw-Pile{
+    position:absolute;
+    top:95%;
+    left:1.5%;
+}
+#hand{
+    position:absolute;
+    bottom:5%;
+    left:45%;
+}
+#exhaust-Pile{
+    position:absolute;
+    bottom:15%;
+    right:5%;
+}
+#discard-Pile{
+    position: absolute;
+    bottom: 5%; 
+    right:5%;
+}
+#player-Picture-Zone{
+    background-color:yellowgreen;
+}
+#enemy-Zone{
+    position:absolute;
+    top:30%;
+    right:10%;
+}
+.enemy{
+    background-color:red;
+    width:200px;
+    height:300px;
+}
+.character-picture-zone{
+    width:200px;
+    height:200px;
+}
+.enemy-picture-zone{
+    background-color: maroon;
+}
+.ally{
+    background-color:blue;
+    width:200px;
+    height:300px;
+}
+.ally-picture-zone{
+    background-color:darkblue;
+}
+/*top bar styling + tooltip */
+#top-Bar{
+    background-color: gray;
+}
+.top-bar-member{
+    float:left;
+}
+/*.invisible{
+    visibility:hidden;
+}
+.visible{
+    visibility: visible;
+}
+*/
+.top-bar-member{
+    padding-left:20px;
+}
+.class-bar{
+    padding-left:0px !important;
+}
+#floor-Number{
+    justify-content: center;
+}
+#right-Bar{
+    float:right;
+}
+.tooltip .tool-tip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    right:75%;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tool-tip-text {
+    visibility: visible;
+    right:75%;
+    
+}
+.first-element{
+    padding:0px;
+}
+
+
+.padding-0{
+    padding:0px;
+}
