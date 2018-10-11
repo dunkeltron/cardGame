@@ -5,7 +5,7 @@ img{
 #health-Bar{
     background-color: red;
     border-radius: 15px;
-    border: 1px white solid;
+    border: 2px whitesmoke solid;
     text-align: center;
 }
 /*combat-View formatting*/
