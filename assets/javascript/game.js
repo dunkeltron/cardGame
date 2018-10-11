@@ -1,10 +1,17 @@
 
 var test = new Card('test',"../images/cardPics/attack.png",1,"","testing",'attack','builder');
 console.log(test);
-var testChar = new character('player',75,75,[]);
+var testChar = new Character('player',75,75,[]);
 console.log(testChar);
+var deck=[];
+for (i=0; i<5;i++){
+    deck.push(new Card('attack',"../images/cardPics/attack.png",1,"","Deal 6 damage to an enemy.","Attack","builder"));
+    deck.push(new Card("defend","../images/cardPics/attack.png",1,"","Gain 5 Block.","Skill","builder"));
+}
 
-
+deck.forEach(element => {
+    console.log(element);
+});
 
 
 

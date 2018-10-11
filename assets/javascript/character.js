@@ -1,5 +1,5 @@
 
-class character{
+class Character{
     
     constructor(aff,MHP,CHP,buffsArr){
         this.affiliation=aff;
