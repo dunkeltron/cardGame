@@ -1,15 +1,18 @@
 
 class Character{
     
-    constructor(aff,MHP,CHP,buffsArr){
+    constructor(aff,MHP,CHP,buffsArr,picSRC){
         this.affiliation=aff;
         this.mHP = MHP;
         this.cHP=CHP;
         this.buffs=buffsArr
         this.block =0;
+        this.pic=picSRC;
     }
+    
     //manipulators
     calcDamage(dam,buffs){
+        console.log("in calc");
         var totalDam=dam;
         var multiTotal=1;
         buffs.forEach(element => {
@@ -22,10 +25,20 @@ class Character{
                 multiTotal*=element.modifier(multiTotal);
             }            
         });
-        return totalDam*multiTotal;
+        console.log(Math.floor(totalDam*multiTotal));
+        return Math.floor(totalDam*multiTotal);
     }
     takeDamage(dam){
-        this.cHP= this.cHp+this.block - dam;
+        console.log("in take dam="+dam);
+        dam = this.block - dam;
+        if(dam<=0){
+            this.cHP= this.cHP+ dam;
+        }
+        console.log(this.cHP);
+        
+    }
+    heal(amount){
+        this.cHP += amount;
     }
     addBlock(blockNum){
         this.block=this.block+blockNum;
@@ -50,7 +63,17 @@ class Character{
         this.block=0;
         resetEnergy();
     }
+    initializeCombat(){
+        this.buffs.forEach(element =>{
+            if (element.when=="combatStart"){
+                buffs.push(element);
+            }
+        });
+    }
     //getters
+    getPic(){
+        return this.pic;
+    }
     getAffiliation(){
         return this.affiliation;
     }
@@ -64,6 +87,9 @@ class Character{
         return this.buffs;
     }
     //setters
+    setPic(src){
+        this.pic=src;
+    }
     setAffiliation(aff){
         this.affiliation=aff;
     }

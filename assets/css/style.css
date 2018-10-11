@@ -1,3 +1,13 @@
+img{
+    width:200px;
+    height:200px;
+}
+#health-Bar{
+    background-color: red;
+    border-radius: 15px;
+    border: 1px white solid;
+    text-align: center;
+}
 /*combat-View formatting*/
 #combat-View{
     position:fixed;
@@ -12,7 +22,7 @@
     left:10%;
 }
 #player{    
-    background-color:green;
+    /*background-color:green;*/
     width:200px;
     height:300px;
 }
@@ -47,7 +57,7 @@
     height:200px;
 }
 #player-Picture-Zone{
-    background-color:yellowgreen;
+    /*background-color:yellowgreen;*/
 }
 #enemy-Zone{
     position:absolute;
@@ -55,13 +65,13 @@
     right:10%;
 }
 .enemy{
-    background-color:red;
+    /*background-color:red;*/
     width:200px;
     height:300px;
 }
 
 .enemy-picture-zone{
-    background-color: maroon;
+    /*background-color: maroon;*/
 }
 .ally{
     background-color:blue;
