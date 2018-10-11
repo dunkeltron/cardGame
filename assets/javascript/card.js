@@ -1,6 +1,6 @@
 var card = {
     cardName: "card",
-    cardPicture: "../images/cardPics/attack.jpg",
+    cardPicture: "../images/cardPics/attack.png",
     cardCost: 1,
     cardFunction: '',
     cardText: 'Deal 6 damage to an enemy.',

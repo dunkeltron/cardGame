@@ -1,6 +1,8 @@
 
-
-
+var test = new Card('test',"../images/cardPics/attack.png",1,"","testing",'attack','builder');
+console.log(test);
+var testChar = new character('player',75,75,[]);
+console.log(testChar);
 
 
 
