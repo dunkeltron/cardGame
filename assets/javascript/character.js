@@ -2,12 +2,6 @@
 class Character {
 
     constructor(aff, MHP, CHP, buffsArr, picSRC) {
-        if (aff == 'player') {
-            return new Player()
-        }
-        else {
-
-        }
         this.affiliation = aff;
         this.mHP = MHP;
         this.cHP = CHP;
@@ -106,18 +100,18 @@ class Character {
         this.buffs = newBuffs;
     }
 }
-class Player extends Character {
+class Player extends Character{
     constructor(aff, MHP, CHP, buffsArr, picSRC, deck, mNRG,cNRG) {
-        this.affiliation = aff;
-        this.mHP = MHP;
-        this.cHp = CHP;
-        this.buffs = buffsArr;
-        this.pic = picSRC;
+        super(aff, MHP, CHP, buffsArr, picSRC);
         this.deck = deck;
         this.mEnergy = mNRG;
         this.cEnergy = cNRG;
+        console.log(this);
     }
     //mutators
+    calcDamage(dam,buffs){
+        super.calcDamage(dam,buffs);
+    }
     addToDeck(card){
         this.deck.push(card);
     }

@@ -1,12 +1,8 @@
 
 var test = new Card('test',"../images/cardPics/attack.png",1,"","testing",'attack','builder');
 console.log(test);
-var testChar = new Character('player',75,75,[],"assets/images/charPics/builderPlaceholder.png");
-console.log(testChar);
+var testChar = new Player('player',75,75,[],"assets/images/charPics/builderPlaceholder.png",[],3,3);
 var testEnemy = new Character("enemy",12,12,[],"assets/images/charPics/badGuyPlaceholder.png");
-console.log(testEnemy);
-testEnemy.takeDamage(testChar.calcDamage(6,testChar.getBuffs()));
-console.log(testEnemy);
 // var deck=[];
 // for (i=0; i<5;i++){
 //     deck.push(new Card('attack',"../images/cardPics/attack.png",1,"","Deal 6 damage to an enemy.","Attack","builder"));

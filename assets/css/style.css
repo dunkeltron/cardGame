@@ -34,14 +34,32 @@ img{
     height:50px;
     width:50px;
     border-radius:75px;
-    border:2px white solid;
+    border:2px whitesmoke solid;
     background-color:teal;
     text-align: center;
 }
 #energy-Amount{
     line-height: 50px;
     color:whitesmoke;
-
+    height:50px;
+    width:50px;
+    border-radius:75px;
+}
+#end-Turn-Button{
+    display:flex;
+    align-items: center;
+    position:absolute;
+    top:80%;
+    right:5%;
+    background-color: maroon;
+    height:50px;
+    width:50px;
+    border-radius:75px;
+    text-align: center;
+    border:2px whitesmoke solid;
+}
+#end-Turn-Title{
+    display: inline-block;
 }
 #draw-Pile{
     position:absolute;
@@ -55,13 +73,13 @@ img{
 }
 #exhaust-Pile{
     position:absolute;
-    bottom:15%;
-    right:5%;
+    top:90%;
+    right:1.5%;
 }
 #discard-Pile{
     position: absolute;
-    bottom: 5%; 
-    right:5%;
+    top: 95%; 
+    right:1.5%;
 }
 /* character formatting (includes player, enemies, allies*/
 .character-picture-zone{
