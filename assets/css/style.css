@@ -7,6 +7,7 @@ img{
     border-radius: 15px;
     border: 2px whitesmoke solid;
     text-align: center;
+    font-weight: bold;
 }
 /*combat-View formatting*/
 #combat-View{
@@ -28,8 +29,19 @@ img{
 }
 #energy{
     position:absolute;
-    top:85%;
+    top:80%;
     left:5%;
+    height:50px;
+    width:50px;
+    border-radius:75px;
+    border:2px white solid;
+    background-color:teal;
+    text-align: center;
+}
+#energy-Amount{
+    line-height: 50px;
+    color:whitesmoke;
+
 }
 #draw-Pile{
     position:absolute;

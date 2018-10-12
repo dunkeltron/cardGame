@@ -9,10 +9,11 @@ class Character{
         this.block =0;
         this.pic=picSRC;
     }
+    //player char conbstructor
+    
     
     //manipulators
     calcDamage(dam,buffs){
-        console.log("in calc");
         var totalDam=dam;
         var multiTotal=1;
         buffs.forEach(element => {
@@ -29,7 +30,6 @@ class Character{
         return Math.floor(totalDam*multiTotal);
     }
     takeDamage(dam){
-        console.log("in take dam="+dam);
         dam = this.block - dam;
         if(dam<=0){
             this.cHP= this.cHP+ dam;
