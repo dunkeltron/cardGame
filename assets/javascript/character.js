@@ -108,58 +108,33 @@ class Player extends Character{
         this.mEnergy = mNRG;
         this.cEnergy = cNRG;
         this.hand=[];
+        this.deckClone=[];
+        this.discardPile=[];
+        this.exhaustPile=[];
         console.log(this);
     }
-    //mutators
-    calcDamage(dam,buffs){
-        super.calcDamage(dam,buffs);
-    }
-    addToDeck(card){
-        this.deck.push(card);
-    }
-    removeFromDeck(card){
-        this.deck.forEach(element => {
-           if(element.getName()==card.getName()){
-                deck.pop(element);
-           } 
-        });
-    }
-    spendEnergy(amt){
-        this.cEnergy = this.cEnergy - amt;
-    }
-    drawCards(amount){
-        for(i=0;i<amount;i++){
-            this.hand.push(this.deck.pop())
-        }
-    }
-    endTurnCycle() {
 
-        //this.iterateBuffs();
-    }
-    startTurnCycle() {
-        this.block = 0;
-        resetEnergy();
-    }
-    initializeCombat() {
-        this.buffs.forEach(element => {
-            if (element.when == "combatStart") {
-                buffs.push(element);
-            }
-        });
-        this.drawCards(5);
-    }
     //getters
     getHand(){
         return this.hand;
     }
-    getCEnergy(){
+    getEnergy(){
         return this.cEnergy;
     }
     getMaxEnergy() {
-        return this.maxEnergy;
+        return this.mEnergy;
     }
     getDeckList() {
         return this.deck;
+    }
+    getDeckSize(){
+        return this.deckClone.length
+    }
+    getDiscardSize(){
+        return this.discardPile.length;
+    }
+    getExhaustSize(){
+        return this.exhaustPile.length;
     }
     //setters
     setMaxEnergy(amt){
@@ -171,4 +146,52 @@ class Player extends Character{
     setEnergy(amt){
         this.cEnergy = amt;
     }
+        //mutators
+        calcDamage(dam,buffs){
+            super.calcDamage(dam,buffs);
+        }
+        addToDeck(card){
+            this.deck.push(card);
+        }
+        removeFromDeck(card){
+            this.deck.forEach(element => {
+               if(element.getName()==card.getName()){
+                    deck.pop(element);
+               } 
+            });
+        }
+        spendEnergy(amt){
+            this.cEnergy = this.cEnergy - amt;
+        }
+        drawCards(amount){
+            for(i=0;i<amount;i++){
+                if(this.deckClone.length==0){
+                    this.deckClone = this.discardPile;
+                    this.discardPile =[];
+                    
+                }
+                this.hand.push(this.deckClone.pop())
+            }
+        }
+        endTurnCycle() {
+    
+            //this.iterateBuffs();
+        }
+        startTurnCycle() {
+            this.block = 0;
+            resetEnergy();
+        }
+        initializeCombat() {
+            
+            
+            this.setEnergy(this.getMaxEnergy());
+            console.log(this);
+            this.deckClone= this.getDeckList();
+            this.buffs.forEach(element => {
+                if (element.when == "combatStart") {
+                    buffs.push(element);
+                }
+            });
+            this.drawCards(5);
+        }
 }

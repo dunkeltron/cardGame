@@ -2,16 +2,15 @@
 function drawEnergy(amount) {
     $("#energy-Amount").text(amount + " / " + 3);
 }
-drawEnergy(4);
-function drawDrawPile(arr) {
-    $("#draw-Pile").text(arr.length);
+function drawDrawPile(amt) {
+    $("#draw-Pile").text(amt);
 }
 
-function drawDiscardPile(arr) {
-    $("#discard-Pile").text(arr.length);
+function drawDiscardPile(amt) {
+    $("#discard-Pile").text(amt);
 }
-function drawExhaustPile(arr) {
-    $("#exhaust-Pile").text(arr.length);
+function drawExhaustPile(amt) {
+    $("#exhaust-Pile").text(amt);
 }
 function drawCardsInHand(arr) {
     arr.forEach(element => {
@@ -43,12 +42,13 @@ function draw(character) {
         $("#player-Picture-Zone").append($("<img src =" + character.getPic() + ">"));
         $("#player-Health-Bar").append($("<div id=health-Bar>").text(character.getCHP() + " / " + character.getMHP()));
         drawCardsInHand(character.getHand());
+        drawEnergy(character.getEnergy());
+        drawDrawPile(character.getDeckSize());
+        drawExhaustPile(character.getExhaustSize());
+        drawDiscardPile(character.getDiscardSize());
     }
     if (character.getAffiliation() === "enemy") {
         $(".enemy-picture-zone").append($("<img src =" + character.getPic() + ">"));
         $(".health-bar").append($("<div id=health-Bar>").text(character.getCHP() + " / " + character.getMHP()));
     }
 }
-drawDrawPile(["Saab", "Volvo", "BMW", "Koenigsegg", "Mazda"]);
-drawDiscardPile(["Saab", "Volvo", "BMW", "Koenigsegg", "Mazda"]);
-drawExhaustPile(["Saab", "Volvo", "BMW", "Koenigsegg", "Mazda"]);

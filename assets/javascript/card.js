@@ -1,4 +1,3 @@
-
 class Card {
     constructor(name, picSrc, cost, text, type, cardclass) {
         this.cardName = name;
