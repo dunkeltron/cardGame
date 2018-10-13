@@ -1,24 +1,26 @@
 
-var test = new Card('test',"../images/cardPics/attack.png",1,"","testing",'attack','builder');
-console.log(test);
-var testChar = new Player('player',75,75,[],"assets/images/charPics/builderPlaceholder.png",[],3,3);
-var testEnemy = new Character("enemy",12,12,[],"assets/images/charPics/badGuyPlaceholder.png");
-// var deck=[];
-// for (i=0; i<5;i++){
-//     deck.push(new Card('attack',"../images/cardPics/attack.png",1,"","Deal 6 damage to an enemy.","Attack","builder"));
-//     deck.push(new Card("defend","../images/cardPics/attack.png",1,"","Gain 5 Block.","Skill","builder"));
-// }
-
-// deck.forEach(element => {
-//     console.log(element);
-// });
-function startCombat(){
-    var actors = [testChar,testEnemy];
-    actors.forEach(element =>{
-        draw(element);
-        element.initializeCombat();
-    });
+var deck = [];
+for (i = 0; i < 5; i++) {
+    deck.push(new Card('attack', "assets/images/cardPics/attack.png", 1,  "Deal 6 damage to an enemy.", "Attack", "builder"));
+    deck.push(new Card("defend", "assets/images/cardPics/attack.png", 1,  "Gain 5 Block.", "Skill", "builder"));
 }
+
+var testChar = new Player('player', 75, 75, [], "assets/images/charPics/builderPlaceholder.png", deck, 3, 3);
+var testEnemy = new Character("enemy", 12, 12, [], "assets/images/charPics/badGuyPlaceholder.png");
+function startCombat() {
+    var actors = [testChar, testEnemy];
+    actors.forEach(element => {
+        
+        element.initializeCombat();
+        draw(element);
+    });
+    //startCombatBuffs();
+
+}
+$("#hand").on("click",'.card',function(element){
+    
+    console.log("wedaBest");
+})
 startCombat();
 
 

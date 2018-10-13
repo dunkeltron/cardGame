@@ -1,12 +1,4 @@
-var card = {
-    cardName: "card",
-    cardPicture: "../images/cardPics/attack.png",
-    cardCost: 1,
-    cardFunction: '',
-    cardText: 'Deal 6 damage to an enemy.',
-    cardType: 'Attack',
-    cardClass: 'builder'
-}
+
 class Card {
     constructor(name, picSrc, cost, text, type, cardclass) {
         this.cardName = name;

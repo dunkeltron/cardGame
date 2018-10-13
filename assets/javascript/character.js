@@ -66,6 +66,7 @@ class Character {
                 buffs.push(element);
             }
         });
+
     }
     //getters
     getPic() {
@@ -106,6 +107,7 @@ class Player extends Character{
         this.deck = deck;
         this.mEnergy = mNRG;
         this.cEnergy = cNRG;
+        this.hand=[];
         console.log(this);
     }
     //mutators
@@ -125,7 +127,31 @@ class Player extends Character{
     spendEnergy(amt){
         this.cEnergy = this.cEnergy - amt;
     }
+    drawCards(amount){
+        for(i=0;i<amount;i++){
+            this.hand.push(this.deck.pop())
+        }
+    }
+    endTurnCycle() {
+
+        //this.iterateBuffs();
+    }
+    startTurnCycle() {
+        this.block = 0;
+        resetEnergy();
+    }
+    initializeCombat() {
+        this.buffs.forEach(element => {
+            if (element.when == "combatStart") {
+                buffs.push(element);
+            }
+        });
+        this.drawCards(5);
+    }
     //getters
+    getHand(){
+        return this.hand;
+    }
     getCEnergy(){
         return this.cEnergy;
     }
