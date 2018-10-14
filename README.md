@@ -8,3 +8,6 @@
 1. Haven't worked on the tool tips.
 2. Combat turn logic.
 3. character interaction(damage).
+#10/13 TO DO!
+1. tooltips...
+2. combat sequence(click cards,monster attacks, update window stuffs).
